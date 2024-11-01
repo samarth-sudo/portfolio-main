@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+  cursor: none;
+}
+
+::selection {
+  background: rgba(96, 165, 250, 0.2);
+}
+
+/* Hide default cursor on interactive elements */
+a, button {
+  cursor: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Swiper custom styles */
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide {
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+}
