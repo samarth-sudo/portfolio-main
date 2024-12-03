@@ -186,35 +186,43 @@ function App() {
           <div className="max-w-3xl mx-auto space-y-12">
             {[
               {
-                title: "Research Intern",
-                company: "Robotics And Autonomous Systems Teaching and Innovation Center",
-                date: "Jun 2024 – Aug 2024",
-                location: "Boston, USA",
-                description: [
-                  "Spearheaded building of software wherein students can provide path planning algorithm for Tiny Whoop drones (5 cm - 10cm in length).",
-                  "Developed an end-to-end solution using Server-Side deployment of algorithms using relevant APIs for ease of access to required personnel."
+              "title": "Research Intern",
+              "company": "Robotics And Autonomous Systems Teaching and Innovation Center",
+             "date": "Jun 2024 – Aug 2024",
+             "location": "Boston, USA",
+             "description": [
+    "Led the design and development of an interactive platform for Tiny Whoop drones, utilizing GPU acceleration (NVIDIA CUDA) and LLM models for custom path-planning.",
+    "Refactored ReactJS components for front-end optimization, enhancing state management with Redux and integrating GraphQL to reduce API call redundancies and improve load times by 25% for over 500 daily users.",
+    "Optimized database performance by refining SQL queries and implementing caching strategies, reducing data retrieval times by 40%.",
+    "Integrated CI/CD pipelines with Jenkins for automated testing and deployment, reducing deployment time by 50%."
                 ]
               },
               {
-                title: "Graduate Teaching Assistant",
-                company: "Boston University",
-                date: "Jan 2024 - May 2024",
-                location: "Boston, USA",
-                description: [
-                  "Guided students on hands-on course for introducing Arduino along with various sensors.",
-                  "Instructed students in CAD building, Arduino programming and soldering for room temperature monitoring."
-                ]
-              },
+  "title": "Graduate Teaching Assistant",
+  "company": "Boston University",
+  "date": "Jan 2024 – May 2024",
+  "location": "Boston, USA",
+  "description": [
+    "Led hands-on sessions with students, providing guidance on Arduino-based projects, sensor integration, and CAD design, fostering practical skills in electronics and embedded systems.",
+    "Developed Spring Boot microservices with Coherence, enhancing transaction speed by 30%.",
+    "Assisted students in using SolidWorks for PCB design and sensor integration, enabling efficient project execution and design accuracy."
+  ]
+},
               {
-                title: "Internship Trainee",
-                company: "Noida Metro Rail Corporation",
-                date: "Jun 2022 - Jul 2022",
-                location: "Noida, India",
-                description: [
-                  "Gained valuable experience in strategic planning and operational techniques required to launch and manage a metro network in a metropolitan city.",
-                  "Developed knowledge in signaling and telecommunication systems over a 30 km metro network, including signal processing, data communication, and centralized control of interconnected stations and trains."
-                ]
-              }
+  "title": "Software Engineer",
+  "company": "Cutso Foods LLP",
+  "date": "Aug 2021 – Jun 2023",
+  "location": "India",
+  "description": [
+    "Built scalable REST APIs and microservices using Java Spring Boot for card payment processing and transaction routing, reducing server response times by 50%.",
+    "Optimized SQL queries, reducing execution time by 35% through index tuning and strategic JOINs, enhancing data processing speed for financial operations.",
+    "Designed and implemented 20+ customized AWS IAM policies, improving access security and compliance by 25%. Automated billing workflows with AWS Lambda and DynamoDB, minimizing errors by 30%.",
+    "Refactored ReactJS components for front-end optimization, improving state management and reducing API call redundancies, which enhanced load times by 25% for over 500 daily users.",
+    "Implemented multithreading techniques to optimize response times and reduce latency by 30%.",
+    "Developed a Power BI dashboard integrated with MongoDB to analyze marketing campaign performance, contributing to a 10% increase in sales within the first quarter.",
+    "Optimized AWS resources (EC2, S3) with IAM roles, enhancing uptime and resource management by 15%."
+  ]
+}
             ].map((exp, i) => (
               <motion.div
                 key={i}
