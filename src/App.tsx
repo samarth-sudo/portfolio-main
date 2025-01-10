@@ -93,7 +93,8 @@ function App() {
                     'Robotics Engineer',
                     'IoT Engineer',
                     'UAV Engineer',
-                    'Python Developer'
+                    'Python Developer',
+                    'Software Engineer'
                   ],
                   autoStart: true,
                   loop: true,
