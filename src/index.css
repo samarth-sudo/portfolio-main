@@ -58,7 +58,7 @@ a, button {
   background: #444;
 }
 
-/* Swiper custom styles */
+/* Swiper custom styles 
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -67,4 +67,4 @@ a, button {
 .swiper-slide {
   transform-origin: center bottom;
   backface-visibility: hidden;
-}
+}*/ 
