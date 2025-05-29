@@ -28,7 +28,7 @@ function App() {
       <motion.div
   className="fixed inset-0 -z-10 pointer-events-none transition-all duration-200"
   style={{
-    background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #0ea5e9 0%, #000000 80%)`
+    background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, 0%, #0ea5e9 15%, #000000 60%)`
   }}
 />
 
