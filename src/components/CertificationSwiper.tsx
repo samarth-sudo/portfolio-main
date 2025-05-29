@@ -1,8 +1,6 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const certifications = [
   {
@@ -35,27 +33,41 @@ const certifications = [
   }
 ];
 
-export const CertificationSwiper = () => {
+export const Certifications = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className="w-full max-w-md mx-auto">
-      <Swiper
-        effect={'cards'}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className="w-[300px] h-[400px]"
+    <div className="text-center">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mb-8 px-6 py-2 bg-blue-600 rounded-full hover:bg-blue-500 transition"
       >
-        {certifications.map((cert, index) => (
-          <SwiperSlide key={index} className="bg-gray-900/90 rounded-xl p-6 flex flex-col">
-            <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-            <p className="text-blue-400 mb-2">{cert.organization}</p>
-            <p className="text-gray-400 text-sm mb-4">{cert.date}</p>
-            <p className="text-gray-300 flex-grow mb-4">{cert.description}</p>
-            <p className="text-gray-400 text-sm mt-auto">
-              Instructed by: {cert.instructors}
-            </p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        {expanded ? "Collapse" : "Show All"}
+      </button>
+
+      <motion.div
+        layout
+        className={`grid gap-6 justify-center ${expanded ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}
+      >
+        <AnimatePresence>
+          {certifications.map((cert, index) => (
+            <motion.div
+              key={cert.title}
+              layout
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+              className="bg-gray-900/50 p-6 rounded-lg shadow-md"
+            >
+              <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+              <p className="text-sm text-gray-400 mb-1">{cert.organization} — {cert.date}</p>
+              <p className="text-sm text-gray-300">{cert.description}</p>
+              <p className="text-xs text-gray-500 mt-2 italic">Instructor(s): {cert.instructors}</p>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

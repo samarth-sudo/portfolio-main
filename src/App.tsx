@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Cursor } from './components/Cursor';
 import { Section } from './components/Section';
 import TypewriterComponent from 'typewriter-effect';
-import { CertificationSwiper } from './components/CertificationSwiper';
+import { Certifications } from './components/CertificationSwiper';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -342,7 +342,7 @@ function App() {
       <Section id="certifications" className="bg-black/30">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-light mb-12 text-center">Certifications</h2>
-          <CertificationSwiper />
+          <Certifications />
         </div>
       </Section>
 
