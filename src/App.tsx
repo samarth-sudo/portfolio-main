@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cursor } from './components/Cursor';
@@ -8,9 +8,31 @@ import { CertificationSwiper } from './components/CertificationSwiper';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white cursor-none">
+      {/* Gradient Mouse Background */}
+      <motion.div
+        className="fixed inset-0 -z-10 pointer-events-none"
+        animate={{
+          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #0ea5e9 0%, #000 80%)`
+        }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+      />
+
       <Cursor />
       
       {/* Header */}
