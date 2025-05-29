@@ -24,7 +24,7 @@ function App() {
             Home
           </motion.h1>
           <nav className="hidden md:flex gap-8">
-            {['about', 'education', 'experience', 'projects', 'contact'].map((item, i) => (
+            {['education', 'experience', 'projects', 'contact'].map((item, i) => (
               <motion.a
                 key={item}
                 href={`#${item}`}
