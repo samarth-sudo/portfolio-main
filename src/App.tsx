@@ -23,15 +23,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white cursor-none">
+    <div className="min-h-screen bg-transparent text-white cursor-none">
       {/* Gradient Mouse Background */}
       <motion.div
-        className="fixed inset-0 -z-10 pointer-events-none"
-        animate={{
-          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #0ea5e9 0%, #000 80%)`
-        }}
-        transition={{ duration: 0.2, ease: 'easeOut' }}
-      />
+  className="fixed inset-0 -z-10 pointer-events-none transition-all duration-200"
+  style={{
+    background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #0ea5e9 0%, #000000 80%)`
+  }}
+/>
+
 
       <Cursor />
       

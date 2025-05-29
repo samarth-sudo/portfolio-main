@@ -7,10 +7,7 @@ html {
 }
 
 body {
-  @apply bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500;
-    /* Default gradient for fallback */
-  animation: gradientAnimation 8s infinite;
-    /* Apply gradient animation */
+  @apply bg-black;
   cursor: none;
 }
 @keyframes gradientAnimation {
