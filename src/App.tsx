@@ -255,65 +255,66 @@ function App() {
 
       {/* Projects Section */}
       <Section id="projects">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-light mb-12 text-center">Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[
-  {
-    title: "Job AI",
-    description: "Automated high-volume job applications using Selenium + Playwright with CAPTCHA bypass and dynamic resume injection. Reduced manual effort by 80%.",
-    link: "https://github.com/samarth-sudo/Job-AI" 
-  },
-  {
-    title: "Autonomous FPV Drone",
-    description: "Built Unity-based drone simulator with real-time sensor fusion and kinematic control module to test autonomous navigation algorithms.",
-    link: "https://github.com/samarth-sudo/Simulator_GOAP" 
-  {
-    title: "Living Rat Cells Segmentation",
-    description: "Developed image segmentation pipeline for live rat cells using advanced filtering and edge detection techniques.",
-    link: "https://github.com/WalnutEagle/CAS-CS-585-Project"
-  },
-  {
-    title: "Prostate Cancer Grade Assessment",
-    description: "Designed deep learning classifier to assess prostate cancer severity from histopathology images using CNN architectures.",
-    link: "https://github.com/renaik/EC-500-PandaChallenge"
-  },
-  {
-    title: "Computer Configuration via ML",
-    description: "Optimized PC configurations using classical ML algorithms based on benchmark data and system performance.",
-    link: "https://github.com/Talha188344/503_PROJECT"
-  },
-  {
-    title: "Weather Monitoring via LoRa",
-    description: "Automated real-time weather monitoring system using LoRa communication for long-range sensor data transmission.",
-    link: "https://github.com/samarth-sudo/Quadcopter-for-Weather-Forcasting"
-  }
-]
-.map((project, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5 }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-lg bg-gray-900/50 p-6"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <h3 className="text-xl mb-2 relative z-10">{project.title}</h3>
-                <p className="text-gray-400 mb-4 relative z-10">{project.description}</p>
-                <a 
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="text-blue-400 hover:text-blue-300 transition-colors relative z-10"
-                >
-                  View Project
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-light mb-12 text-center">Projects</h2>
+    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {[
+        {
+          title: "Job AI",
+          description: "Automated high-volume job applications using Selenium + Playwright with CAPTCHA bypass and dynamic resume injection. Reduced manual effort by 80%.",
+          link: "https://github.com/samarth-sudo/Job-AI"
+        },
+        {
+          title: "Autonomous FPV Drone",
+          description: "Built Unity-based drone simulator with real-time sensor fusion and kinematic control module to test autonomous navigation algorithms.",
+          link: "https://github.com/samarth-sudo/Simulator_GOAP"
+        },
+        {
+          title: "Living Rat Cells Segmentation",
+          description: "Developed image segmentation pipeline for live rat cells using advanced filtering and edge detection techniques.",
+          link: "https://github.com/WalnutEagle/CAS-CS-585-Project"
+        },
+        {
+          title: "Prostate Cancer Grade Assessment",
+          description: "Designed deep learning classifier to assess prostate cancer severity from histopathology images using CNN architectures.",
+          link: "https://github.com/renaik/EC-500-PandaChallenge"
+        },
+        {
+          title: "Computer Configuration via ML",
+          description: "Optimized PC configurations using classical ML algorithms based on benchmark data and system performance.",
+          link: "https://github.com/Talha188344/503_PROJECT"
+        },
+        {
+          title: "Weather Monitoring via LoRa",
+          description: "Automated real-time weather monitoring system using LoRa communication for long-range sensor data transmission.",
+          link: "https://github.com/samarth-sudo/Quadcopter-for-Weather-Forcasting"
+        }
+      ].map((project, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -5 }}
+          transition={{ delay: i * 0.1 }}
+          className="group relative overflow-hidden rounded-lg bg-gray-900/50 p-6"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <h3 className="text-xl mb-2 relative z-10">{project.title}</h3>
+          <p className="text-gray-400 mb-4 relative z-10">{project.description}</p>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition-colors relative z-10"
+          >
+            View Project
+          </a>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</Section>
+
 
       {/* Certifications Section */}
       <Section id="certifications" className="bg-black/30">
