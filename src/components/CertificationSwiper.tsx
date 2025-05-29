@@ -1,6 +1,6 @@
-
+// components/Certifications.jsx
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const certifications = [
   {
@@ -34,40 +34,35 @@ const certifications = [
 ];
 
 export const Certifications = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="text-center">
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="mb-8 px-6 py-2 bg-blue-600 rounded-full hover:bg-blue-500 transition"
-      >
-        {expanded ? "Collapse" : "Show All"}
-      </button>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {certifications.map((cert, index) => {
+        const isActive = activeIndex === index;
 
-      <motion.div
-        layout
-        className={`grid gap-6 justify-center ${expanded ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}
-      >
-        <AnimatePresence>
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.title}
-              layout
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.5 }}
-              transition={{ type: 'spring', stiffness: 100, damping: 15 }}
-              className="bg-gray-900/50 p-6 rounded-lg shadow-md"
-            >
-              <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
-              <p className="text-sm text-gray-400 mb-1">{cert.organization} — {cert.date}</p>
-              <p className="text-sm text-gray-300">{cert.description}</p>
-              <p className="text-xs text-gray-500 mt-2 italic">Instructor(s): {cert.instructors}</p>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+        return (
+          <motion.div
+            key={cert.title}
+            layout
+            onClick={() => setActiveIndex(isActive ? null : index)}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: isActive ? 1.05 : 1 }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            className={`cursor-pointer rounded-lg bg-gray-900/50 p-6 shadow-md transition-all duration-300 overflow-hidden ${isActive ? 'z-10' : 'z-0'}`}
+          >
+            <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+            <p className="text-sm text-gray-400 mb-1">{cert.organization} — {cert.date}</p>
+            {isActive && (
+              <>
+                <p className="text-sm text-gray-300">{cert.description}</p>
+                <p className="text-xs text-gray-500 mt-2 italic">Instructor(s): {cert.instructors}</p>
+              </>
+            )}
+          </motion.div>
+        );
+      })}
     </div>
   );
 };
