@@ -135,29 +135,30 @@ function App() {
           <h2 className="text-3xl font-light mb-12 text-center">Education</h2>
           <div className="max-w-3xl mx-auto space-y-12">
             {[
-              {
-                degree: "Master of Science in Robotics",
-                school: "Boston University",
-                location: "Boston, MA",
-                date: "2023 - 2025",
-                details: [
-                  "Specialization in Robot Learning and Computer Vision",
-                  "Research Assistant at Robotics and Autonomous Systems Teaching and Innovation Center",
-                  "Relevant Coursework: Robot Learning, Computer Vision, Deep Learning"
-                ]
-              },
-              {
-                degree: "Bachelor of Technology in Electronics and Communication",
-                school: "Amity University",
-                location: "New Delhi, India",
-                date: "2019 - 2023",
-                details: [
-                  "First Class with Distinction",
-                  "Technical Lead at Robotics Society",
-                  "Relevant Coursework: Digital Signal Processing, Control Systems, Embedded Systems"
-                ]
-              }
-            ].map((edu, i) => (
+  {
+    degree: "Master of Science in Robotics and Autonomous Systems",
+    school: "Boston University",
+    location: "Boston, MA",
+    date: "Aug 2023 – Jan 2025",
+    details: [
+      "Specialization in Robot Learning and Computer Vision",
+      "Graduate Research Intern – ROS-based drone telemetry visualization and kinematics analysis",
+      "Relevant Coursework: Deep Learning, Computer Vision, Robot Kinematics"
+    ]
+  },
+  {
+    degree: "Bachelor of Technology in Electronics and Communication",
+    school: "Amity University",
+    location: "New Delhi, India",
+    date: "Aug 2019 – May 2023",
+    details: [
+      "Graduated with First Class with Distinction",
+      "Technical Lead at Robotics Society",
+      "Relevant Coursework: Control Systems, Embedded Systems, Signal Processing"
+    ]
+  }
+]
+.map((edu, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
@@ -186,45 +187,50 @@ function App() {
           <h2 className="text-3xl font-light mb-12 text-center">Experience</h2>
           <div className="max-w-3xl mx-auto space-y-12">
             {[
-              {
-              "title": "Research Intern",
-              "company": "Robotics And Autonomous Systems Teaching and Innovation Center",
-             "date": "Jun 2024 – Aug 2024",
-             "location": "Boston, USA",
-             "description": [
-    "Led the design and development of an interactive platform for Tiny Whoop drones, utilizing GPU acceleration (NVIDIA CUDA) and LLM models for custom path-planning.",
-    "Refactored ReactJS components for front-end optimization, enhancing state management with Redux and integrating GraphQL to reduce API call redundancies and improve load times by 25% for over 500 daily users.",
-    "Optimized database performance by refining SQL queries and implementing caching strategies, reducing data retrieval times by 40%.",
-    "Integrated CI/CD pipelines with Jenkins for automated testing and deployment, reducing deployment time by 50%."
-                ]
-              },
-              {
-  "title": "Graduate Teaching Assistant",
-  "company": "Boston University",
-  "date": "Jan 2024 – May 2024",
-  "location": "Boston, USA",
-  "description": [
-    "Led hands-on sessions with students, providing guidance on Arduino-based projects, sensor integration, and CAD design, fostering practical skills in electronics and embedded systems.",
-    "Developed Spring Boot microservices with Coherence, enhancing transaction speed by 30%.",
-    "Assisted students in using SolidWorks for PCB design and sensor integration, enabling efficient project execution and design accuracy."
-  ]
-},
-              {
-  "title": "Software Engineer",
-  "company": "Cutso Foods LLP",
-  "date": "Aug 2021 – Jun 2023",
-  "location": "India",
-  "description": [
-    "Built scalable REST APIs and microservices using Java Spring Boot for card payment processing and transaction routing, reducing server response times by 50%.",
-    "Optimized SQL queries, reducing execution time by 35% through index tuning and strategic JOINs, enhancing data processing speed for financial operations.",
-    "Designed and implemented 20+ customized AWS IAM policies, improving access security and compliance by 25%. Automated billing workflows with AWS Lambda and DynamoDB, minimizing errors by 30%.",
-    "Refactored ReactJS components for front-end optimization, improving state management and reducing API call redundancies, which enhanced load times by 25% for over 500 daily users.",
-    "Implemented multithreading techniques to optimize response times and reduce latency by 30%.",
-    "Developed a Power BI dashboard integrated with MongoDB to analyze marketing campaign performance, contributing to a 10% increase in sales within the first quarter.",
-    "Optimized AWS resources (EC2, S3) with IAM roles, enhancing uptime and resource management by 15%."
-  ]
-}
-            ].map((exp, i) => (
+  {
+    title: "Machine Learning Engineer",
+    company: "Chicago Education Advocacy Cooperative (ChiEAC)",
+    date: "May 2025 – Oct 2025",
+    location: "Chicago, USA",
+    description: [
+      "Built bilingual emotion detection pipeline using DistilBERT and Hugging Face, detecting distress, confusion, and gratitude in real-time.",
+      "Achieved an F1 score of 0.78 and delivered actionable integration for CARES system, enhancing staff intervention on emotional cues."
+    ]
+  },
+  {
+    title: "Graduate Research Intern",
+    company: "Boston University",
+    date: "May 2024 – Aug 2024",
+    location: "Boston, USA",
+    description: [
+      "Developed ROS-based drone telemetry visualizer with RViz and Python, improving path-planning workflows by 30%.",
+      "Integrated telemetry + feedback loops to improve kinematic understanding and autonomous navigation accuracy."
+    ]
+  },
+  {
+    title: "Graduate Teaching Assistant",
+    company: "Boston University",
+    date: "Jan 2024 – May 2024",
+    location: "Boston, USA",
+    description: [
+      "Guided Arduino, CAD, and sensor-based embedded projects to successful prototype deployment.",
+      "Provided structured feedback and mentorship to strengthen student proficiency in ML signal processing."
+    ]
+  },
+  {
+    title: "Software Engineer",
+    company: "Cutso Foods LLP",
+    date: "Aug 2022 – Jul 2023",
+    location: "India",
+    description: [
+      "Engineered React.js dashboards integrated via WebSockets and Django Channels, improving real-time visibility.",
+      "Streamlined MongoDB + SQL data pipelines and REST APIs to boost ingestion speed by 30%.",
+      "Built multithreaded microservices for billing and analytics using AWS Lambda, IAM, and DynamoDB.",
+      "Reduced latency by 30% and improved transaction reliability across financial services platforms."
+    ]
+  }
+]
+.map((exp, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
@@ -253,27 +259,37 @@ function App() {
           <h2 className="text-3xl font-light mb-12 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
-              {
-                title: "Living Rat Cells Segmentation",
-                description: "Advanced segmentation methodology for living rat cells using image processing techniques.",
-                link: "https://github.com/WalnutEagle/CAS-CS-585-Project"
-              },
-              {
-                title: "Prostate Cancer Grade Assessment",
-                description: "Deep learning solution to classify severity of prostate cancer.",
-                link: "https://github.com/renaik/EC-500-PandaChallenge"
-              },
-              {
-                title: "Classical Machine Learning for Computer Configuration",
-                description: "Algorithm for system designing according to PC benchmark data.",
-                link: "https://github.com/Talha188344/503_PROJECT"
-              },
-              {
-                title: "Weather Monitoring based on LoRa",
-                description: "Complete automation of weather forecasting process using LoRa technology.",
-                link: "https://github.com/samarth-sudo/Quadcopter-for-Weather-Forcasting"
-              }
-            ].map((project, i) => (
+  {
+    title: "Job AI",
+    description: "Automated high-volume job applications using Selenium + Playwright with CAPTCHA bypass and dynamic resume injection. Reduced manual effort by 80%.",
+    link: "https://github.com/samarth-sudo/Job-AI" 
+  },
+  {
+    title: "Autonomous FPV Drone",
+    description: "Built Unity-based drone simulator with real-time sensor fusion and kinematic control module to test autonomous navigation algorithms.",
+    link: "https://github.com/samarth-sudo/Simulator_GOAP" 
+  {
+    title: "Living Rat Cells Segmentation",
+    description: "Developed image segmentation pipeline for live rat cells using advanced filtering and edge detection techniques.",
+    link: "https://github.com/WalnutEagle/CAS-CS-585-Project"
+  },
+  {
+    title: "Prostate Cancer Grade Assessment",
+    description: "Designed deep learning classifier to assess prostate cancer severity from histopathology images using CNN architectures.",
+    link: "https://github.com/renaik/EC-500-PandaChallenge"
+  },
+  {
+    title: "Computer Configuration via ML",
+    description: "Optimized PC configurations using classical ML algorithms based on benchmark data and system performance.",
+    link: "https://github.com/Talha188344/503_PROJECT"
+  },
+  {
+    title: "Weather Monitoring via LoRa",
+    description: "Automated real-time weather monitoring system using LoRa communication for long-range sensor data transmission.",
+    link: "https://github.com/samarth-sudo/Quadcopter-for-Weather-Forcasting"
+  }
+]
+.map((project, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -315,7 +331,7 @@ function App() {
             Currently open to new opportunities. Feel free to reach out!
           </p>
           <motion.a
-            href="mailto:samarthssingh5@gmail.com"
+            href="mailto:samarthsb105@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-8 py-3 bg-transparent border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-black transition-all"
