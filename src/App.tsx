@@ -21,7 +21,7 @@ function App() {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-light"
           >
-            Samarth Singh
+            Home
           </motion.h1>
           <nav className="hidden md:flex gap-8">
             {['about', 'education', 'experience', 'projects', 'contact'].map((item, i) => (
@@ -54,7 +54,7 @@ function App() {
             className="fixed inset-0 bg-black z-30 md:hidden flex items-center justify-center"
           >
             <nav className="flex flex-col gap-8 text-center">
-              {['about', 'education', 'experience', 'projects', 'contact'].map((item) => (
+              {['education', 'experience', 'projects', 'contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item}`}
@@ -79,7 +79,7 @@ function App() {
               transition={{ delay: 0.2 }}
               className="text-gray-400 text-xl mb-4 font-light"
             >
-              Hi, I am Samarth Singh
+              <strong>Hi, I am Samarth Singh</strong>
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
