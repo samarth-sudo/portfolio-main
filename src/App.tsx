@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Cursor } from './components/Cursor';
 import { Section } from './components/Section';
 import TypewriterComponent from 'typewriter-effect';
-import Tilt from 'react-parallax-tilt';
 import { CertificationCards } from './components/CertificationSwiper';
 
 function App() {
@@ -18,42 +17,23 @@ function App() {
         y: (e.clientY / window.innerHeight) * 100,
       });
     };
+
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white cursor-none">
+    <div className="min-h-screen bg-transparent text-white cursor-none">
       {/* Gradient Mouse Background */}
       <motion.div
-        className="fixed inset-0 -z-10 pointer-events-none"
-        animate={{
-          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #0ea5e9 0%, #000 40%)`
-        }}
-        transition={{ duration: 0.2, ease: 'easeOut' }}
-      />
+  className="fixed inset-0 -z-10 pointer-events-none transition-all duration-200"
+  style={{
+    background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, #0ea5e9 0%, #000000 40%)`
+  }}
+/>
+
 
       <Cursor />
-
-      {/* Right Sidebar Navigation */}
-      <aside className="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-6 pr-4">
-        {['education', 'experience', 'projects', 'certifications', 'contact'].map((item, i) => (
-          <motion.a
-            key={item}
-            href={`#${item}`}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.1 }}
-            className="group relative text-gray-400 hover:text-white transition-colors text-sm tracking-wider"
-          >
-            <div className="group-hover:opacity-100 opacity-0 absolute right-full pr-2 text-xs bg-white text-black px-2 py-1 rounded-md transition-opacity">
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </div>
-            ●
-          </motion.a>
-        ))}
-      </aside>
-
       
       {/* Header */}
       <header className="fixed top-0 w-full bg-black/50 backdrop-blur-sm z-40">
