@@ -210,6 +210,18 @@ function App() {
           <div className="max-w-3xl mx-auto space-y-12">
             {[
   {
+    title: "Co-founder",
+    company: "Kangaroo Labs",
+    date: "Sep 2025 – Present",
+    location: "Remote",
+    description: [
+      "Building AI-powered tools at the intersection of quantum computing, 3D simulation, and intelligent automation.",
+      "Developed ChatQuantum: AI-powered quantum simulation platform transforming natural language to executable quantum circuits.",
+      "Created Blender AI: Multi-agent system generating physics simulations from plain English using Claude API.",
+      "Engineered ROO: Production-ready AI SMS assistant with hybrid architecture, unlimited memory, and smart automation."
+    ]
+  },
+  {
     title: "Machine Learning Engineer",
     company: "Chicago Education Advocacy Cooperative (ChiEAC)",
     date: "May 2025 – Oct 2025",
@@ -282,6 +294,24 @@ function App() {
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
       {[
         {
+          title: "ChatQuantum",
+          description: "AI-powered quantum simulation platform converting natural language to executable quantum circuits using GPT-4 + Qiskit. Features VQE simulation, Manim visualizations, and Streamlit interface.",
+          link: "https://github.com/samarth-sudo/chatquantum",
+          tags: ["Kangaroo Labs"]
+        },
+        {
+          title: "Blender AI Simulation Generator",
+          description: "Multi-agent system generating Blender physics simulations from plain English using Claude API. Features SSE streaming, physics validation, and integrated Blender addon.",
+          link: "https://github.com/samarth-sudo/Blender_AI",
+          tags: ["Kangaroo Labs"]
+        },
+        {
+          title: "ROO - AI Personal Assistant",
+          description: "Production-ready AI SMS assistant with hybrid Claude + Qwen architecture, unlimited memory via Supermemory, smart email drafting, and web automation. 95% cost savings over GPT-4.",
+          link: "https://github.com/KangarooProject/ROO",
+          tags: ["Kangaroo Labs"]
+        },
+        {
           title: "Job AI",
           description: "Automated high-volume job applications using Selenium + Playwright with CAPTCHA bypass and dynamic resume injection. Reduced manual effort by 80%.",
           link: "https://github.com/samarth-sudo/Job-AI"
@@ -321,6 +351,13 @@ function App() {
           className="group relative overflow-hidden rounded-lg bg-gray-900/50 p-6"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          {project.tags && project.tags.includes("Kangaroo Labs") && (
+            <div className="mb-3 relative z-10">
+              <span className="inline-block px-3 py-1 text-xs font-medium bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-full text-blue-300">
+                🦘 Kangaroo Labs
+              </span>
+            </div>
+          )}
           <h3 className="text-xl mb-2 relative z-10">{project.title}</h3>
           <p className="text-gray-400 mb-4 relative z-10">{project.description}</p>
           <a
